@@ -1,4 +1,7 @@
 ---
 network.host: 0.0.0.0
+network.publish_host: designsafe-es01.tacc.utexas.edu
 cluster.name: designsafe-es
-node.name: ${HOSTNAME}
+node.name: es01
+discovery.zen.ping.multicast.enabled: false
+discovery.zen.ping.unicast.hosts: ["designsafe-es02.tacc.utexas.edu"]

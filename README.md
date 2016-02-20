@@ -1,0 +1,1 @@
+# DesignSafe ElasticSearch Cluster Config

@@ -1,0 +1,13 @@
+[Unit]
+Description=ElasticSearch
+Requires=docker.service
+After=docker.service
+
+[Service]
+User=elasticsearch
+ExecStart=/bin/docker run -p 9200:9200 -v /home/elasticsearch/elasticsearch/config:/usr/share/elasticsearch/config -v /home/elasticsearch/elasticsearch/data:/usr/share/elasticsearch/data --name designsafe_es elasticsearch
+ExecStop=/bin/docker stop designsafe_es ; /bin/docker rm designsafe_es
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

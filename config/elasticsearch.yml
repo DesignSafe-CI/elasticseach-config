@@ -5,3 +5,4 @@ cluster.name: designsafe-es
 node.name: es01
 discovery.zen.ping.multicast.enabled: false
 discovery.zen.ping.unicast.hosts: ["designsafe-es02.tacc.utexas.edu"]
+bootstrap.mlockall: true

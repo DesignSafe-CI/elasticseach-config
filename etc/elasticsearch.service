@@ -5,7 +5,7 @@ After=docker.service
 
 [Service]
 User=elasticsearch
-ExecStart=/bin/docker run -p 9200:9200 -p 9300:9300 -v /home/elasticsearch/elasticsearch/config:/usr/share/elasticsearch/config -v /home/elasticsearch/elasticsearch/data:/usr/share/elasticsearch/data --name designsafe_es elasticsearch
+ExecStart=/bin/docker run -p 9200:9200 -p 9300:9300 -e ES_HEAP_SIZE=8g -v /home/elasticsearch/elasticsearch/config:/usr/share/elasticsearch/config -v /home/elasticsearch/elasticsearch/data:/usr/share/elasticsearch/data --name designsafe_es elasticsearch
 ExecStop=/bin/docker stop designsafe_es ; /bin/docker rm designsafe_es
 Restart=always
 
